@@ -1,70 +1,122 @@
-# Getting Started with Create React App
+# DonationPal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+DonationPal is a web application that facilitates fundraising by allowing users to create and manage campaigns. Users can create profiles, start fundraising campaigns, and donate to existing campaigns.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- User authentication and profile management
+- Campaign creation and management
+- Browsing and searching for campaigns
+- Donation functionality
+- Campaign details and progress tracking
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- MongoDB: Database
+- Express.js: Backend framework
+- React: Frontend library
+- Node.js: Runtime environment
+- [Any additional libraries or tools, e.g., Redux, Mongoose, etc.]
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Prerequisites
 
-### `npm test`
+Before you begin, ensure you have the following installed:
+- Node.js (version 14.x or later)
+- npm (version 6.x or later)
+- MongoDB (version 4.x or later)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/donationpal.git
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Navigate to the project directory:
+   ```
+   cd donationpal
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Install server dependencies:
+   ```
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Navigate to the client directory and install frontend dependencies:
+   ```
+   cd client
+   npm install
+   ```
 
-### `npm run eject`
+5. Create a `.env` file in the root directory and add your MongoDB connection string and any other necessary environment variables:
+   ```
+   MONGODB_URI=your_mongodb_connection_string
+   JWT_SECRET=your_jwt_secret
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Usage
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Start the server:
+   ```
+   npm run server
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. In a separate terminal, start the client:
+   ```
+   cd client
+   npm start
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. Open your browser and visit `http://localhost:3000`
 
-## Learn More
+## API Endpoints
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- POST /api/users/register - Register a new user
+- POST /api/users/login - User login
+- GET /api/campaigns - Retrieve all campaigns
+- POST /api/campaigns - Create a new campaign
+- GET /api/campaigns/:id - Retrieve a specific campaign
+- PUT /api/campaigns/:id - Update a campaign
+- POST /api/donations - Make a donation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+[Add more endpoints as needed]
 
-### Code Splitting
+## Folder Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+donationpal/
+│
+├── client/             # React frontend
+│   ├── public/
+│   └── src/
+│       ├── components/
+│       ├── pages/
+│       ├── services/
+│       └── App.js
+│
+├── server/             # Node.js/Express backend
+│   ├── config/
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   └── server.js
+│
+├── .env
+├── .gitignore
+├── package.json
+└── README.md
+```
 
-### Analyzing the Bundle Size
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+We welcome contributions to DonationPal! Please follow these steps:
 
-### Making a Progressive Web App
+1. Fork the repository
+2. Create a new branch: `git checkout -b feature-branch-name`
+3. Make your changes and commit them: `git commit -m 'Add some feature'`
+4. Push to the branch: `git push origin feature-branch-name`
+5. Submit a pull request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## License
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the [choose a license] License - see the [LICENSE.md](LICENSE.md) file for details.
