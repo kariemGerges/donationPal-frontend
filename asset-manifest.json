@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/kariemGerges/donationPal-frontend/static/css/main.e6c4c4ea.css",
+    "main.js": "/kariemGerges/donationPal-frontend/static/js/main.3b44cbf3.js",
+    "static/js/453.9acad433.chunk.js": "/kariemGerges/donationPal-frontend/static/js/453.9acad433.chunk.js",
+    "static/media/DonationHands.jpeg": "/kariemGerges/donationPal-frontend/static/media/DonationHands.b57089fc34a62ece6fab.jpeg",
+    "static/media/AIDonation.jpeg": "/kariemGerges/donationPal-frontend/static/media/AIDonation.8e8bdb2cce0876775587.jpeg",
+    "index.html": "/kariemGerges/donationPal-frontend/index.html",
+    "main.e6c4c4ea.css.map": "/kariemGerges/donationPal-frontend/static/css/main.e6c4c4ea.css.map",
+    "main.3b44cbf3.js.map": "/kariemGerges/donationPal-frontend/static/js/main.3b44cbf3.js.map",
+    "453.9acad433.chunk.js.map": "/kariemGerges/donationPal-frontend/static/js/453.9acad433.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c4c4ea.css",
+    "static/js/main.3b44cbf3.js"
+  ]
+}
