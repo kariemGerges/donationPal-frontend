@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/donationPal-frontend/static/css/main.c781f54e.css",
-    "main.js": "/donationPal-frontend/static/js/main.3e81861c.js",
+    "main.css": "/donationPal-frontend/static/css/main.cb5f339d.css",
+    "main.js": "/donationPal-frontend/static/js/main.00234c10.js",
     "static/js/453.9acad433.chunk.js": "/donationPal-frontend/static/js/453.9acad433.chunk.js",
     "static/media/DonationHands.jpeg": "/donationPal-frontend/static/media/DonationHands.b57089fc34a62ece6fab.jpeg",
     "static/media/AIDonation.jpeg": "/donationPal-frontend/static/media/AIDonation.8e8bdb2cce0876775587.jpeg",
+    "static/media/G.jpeg": "/donationPal-frontend/static/media/G.862a3a7d781c7a2a552d.jpeg",
     "index.html": "/donationPal-frontend/index.html",
-    "main.c781f54e.css.map": "/donationPal-frontend/static/css/main.c781f54e.css.map",
-    "main.3e81861c.js.map": "/donationPal-frontend/static/js/main.3e81861c.js.map",
+    "main.cb5f339d.css.map": "/donationPal-frontend/static/css/main.cb5f339d.css.map",
+    "main.00234c10.js.map": "/donationPal-frontend/static/js/main.00234c10.js.map",
     "453.9acad433.chunk.js.map": "/donationPal-frontend/static/js/453.9acad433.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c781f54e.css",
-    "static/js/main.3e81861c.js"
+    "static/css/main.cb5f339d.css",
+    "static/js/main.00234c10.js"
   ]
 }
