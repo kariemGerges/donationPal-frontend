@@ -4,6 +4,7 @@ import  ThemeToggleBtn  from '../ThemeToggleBtn/ThemeToggleBtn';
 import  ThemeContext  from '../ThemeContext/ThemeContext';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/Logo.png';
+import useLogin from '../../hooks/useLogin';
 
 const NavLink = ({ href, children }) => (
     <button 
@@ -19,6 +20,8 @@ const NavLink = ({ href, children }) => (
 const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+
+    const {Login} = useLogin();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -51,12 +54,19 @@ const NavBar = () => {
                                 </div>
                             </div>
                     </div>
+                    
                 <div className="hidden md:block ">
-                    <NavLink href="/Login">
-                        <button className="bg-yellow-400 hover:bg-red-400 text-gray-700 px-4 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out">
-                            Login
+
+                    {/* condition ? true : false  */}
+                    <NavLink href=
+                        {Login ? "/Profile" : "/Login"}
+                    >
+                        <button
+                            className="bg-yellow-400 hover:bg-red-400 text-gray-700 px-4 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out">
+                                Login
                         </button>
                     </NavLink>
+
                     <button className="ml-4 transition duration-150 ease-in-out">
                         <ThemeToggleBtn />
                     </button>

@@ -1,23 +1,41 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import useLogin from '../../hooks/useLogin';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
 import ThemeContext from '../../components/ThemeContext/ThemeContext';
 
 const Login = () => {
   const { theme } = useContext(ThemeContext);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  });
 
-  const handleSubmit = (e) => {
+  const { Login, isLoading, error } = useLogin();
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your login logic here
-    console.log('Login attempt with:', { email, password });
+    
+    try {
+      const success = await Login(formData);
+      if ( success ) {
+        toast.success('Welcome back!');
+        navigate('/profile');
+      }
+
+    } catch (error) {
+      console.error(error + "a7aa");
+    }
   };
+
 
   return (
     <div className={`min-h-screen flex items-center justify-center ${theme ? 'bg-gray-800 text-white' : 'bg-gray-100 text-gray-900'}`}>
       <div className={`max-w-md w-full space-y-8 p-10 rounded-xl shadow-lg ${theme ? 'bg-gray-700' : 'bg-white'}`}>
         <div>
-          <h2 className={`mt-6 text-center text-3xl font-extrabold ${theme ? 'text-blue-300' : 'text-blue-600'}`}>
+          <h2 className={`mt-6 text-center text-3xl font-extrabold`}>
             Sign in to your account
           </h2>
           <p className="mt-2 text-center text-sm">
@@ -27,6 +45,12 @@ const Login = () => {
             </Link>
           </p>
         </div>
+         {/* Display Error Message */}
+          {error && (
+            <div className="text-center text-red-600">
+              {error}
+            </div>
+          )}
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
@@ -39,8 +63,8 @@ const Login = () => {
                 required
                 className={`appearance-none rounded-none relative block w-full px-3 py-2 border ${theme ? 'border-gray-600 bg-gray-800 placeholder-gray-500' : 'border-gray-300 placeholder-gray-500'} text-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10`}
                 placeholder="Email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={formData.email}
+                onChange={(e) => setFormData({...formData, email: e.target.value})}
               />
             </div>
             <div>
@@ -53,8 +77,8 @@ const Login = () => {
                 required
                 className={`appearance-none rounded-none relative block w-full px-3 py-2 border ${theme ? 'border-gray-600 bg-gray-800 placeholder-gray-500' : 'border-gray-300 placeholder-gray-500'} text-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10`}
                 placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={formData.password}
+                onChange={(e) => setFormData({...formData, password: e.target.value})}
               />
             </div>
           </div>
@@ -82,7 +106,7 @@ const Login = () => {
           <div>
             <button
               type="submit"
-              className={`group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white ${theme ? 'bg-blue-600 hover:bg-blue-700' : 'bg-blue-600 hover:bg-blue-700'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500`}
+              className={`group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-orange-500 hover:bg-orange-700`}
             >
               Sign in
             </button>
@@ -91,6 +115,7 @@ const Login = () => {
       </div>
     </div>
   );
+
 };
 
 export default Login;

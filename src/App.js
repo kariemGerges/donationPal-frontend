@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import {HashRouter as Router, Route, Routes, Navigate} from 'react-router-dom';
+import {HashRouter as Router, Route, Routes} from 'react-router-dom';
 
 // Components
 import Header from './components/Header/Header';
@@ -16,6 +16,8 @@ import Profile from './pages/Profile/Profile';
 import Login from './pages/Login/Login';
 import AboutUs from './pages/AboutUs/AboutUs';
 import ErrLandingPage from './pages/ErrLandingPage/ErrLandingPage';
+import Signup from './components/signup/signup';
+import CompleteSignup from './pages/Complete-signup/Complete-signup';
 
 
 function App() {
@@ -37,6 +39,8 @@ function App() {
                   <Route path='/Profile' element={<Profile />} />
                 <Route path='/Login' element={<Login />} />
               <Route path='/AboutUs' element={<AboutUs />} />
+            <Route path='/signup' element={<Signup />} />
+          <Route path={`/complete-signup/:id`} element={<CompleteSignup />} />
               {/* catch all other routes */}
                 <Route path='/ErrLandingPage' element={<ErrLandingPage />} />
               <Route path="*" element={<ErrLandingPage />} />
